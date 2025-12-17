@@ -6,7 +6,7 @@ This document presents an error analysis and workaround for using certain uncoop
 
 ## Analysis
 
-When using the provided USB programmers in the Programming Embedded Systems labs, many units have proven not to work with Apple macOS machines, while functioning without problems on Linux and Windows systems. The issue appears to be limited to specific units, as others work correctly. I brought home one working and one non-working unit to analyze the error on an M4 Mac Mini.
+When using the provided USB programmers in the Microcontroller Programming labs, many units have proven not to work with Apple macOS machines, while functioning without problems on Linux and Windows systems. The issue appears to be limited to specific units, as others work correctly. I brought home one working and one non-working unit to analyze the error on an M4 Mac Mini.
 
 ### USB packet capture
 
@@ -36,7 +36,7 @@ The fact that the error only occurs on macOS may be related to Apple Silicon’s
 
 ## Workaround instructions
 
-The workaround is based on running Linux inside a virtual machine and passing the USB programmer through to the VM. By using SSH and a dedicated `socat` daemon, good integration with PlatformIO on the host system can be achieved, including flashing and runtime serial monitoring. The virtual machine is minimal and uses approximately 1 GB of storage and 256 MB of RAM.
+The workaround is based on running Linux inside a virtual machine and passing the USB programmer through to the VM. By using SSH and a dedicated `socat` daemon, good integration with PlatformIO on the host system can be achieved, including flashing and run-time serial monitoring. The virtual machine is minimal and uses approximately 1 GB of storage and 256 MB of RAM.
 
 1. Install the UTM virtualization software on your machine, either via direct download from [the software’s website](https://mac.getutm.app/), via Homebrew using `brew install --cask utm`, or, if you wish to financially support the developers, by installing it through the [Mac App Store](https://apps.apple.com/us/app/utm-virtual-machines/id1538878817).
 
@@ -45,7 +45,7 @@ The workaround is based on running Linux inside a virtual machine and passing th
 3. Download the latest Alpine Linux–based UTM virtual machine file (Alpine Flashbox) from [the releases page](https://github.com/nixigaj/updi-plus-uart-macos/releases).
 
 > [!CAUTION]
-> Downloading and executing unverified software from unknown sources on GitHub can compromise your system. Always assess the reputability of the author. In this case, I assume your instructor has linked you to this repository, and as a participant in the Programming Embedded Systems course, I can assure you that this repository is reputable.
+> Downloading and executing unverified software from unknown sources on GitHub can compromise your system. Always assess the reputability of the author. In this case, I assume your instructor has linked you to this repository, and as a participant in the Microcontroller Programming course, I can assure you that this repository is reputable.
 
 4. Extract the compressed archive to a directory of your choice for storing virtual machines.
 
